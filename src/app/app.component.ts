@@ -14,5 +14,9 @@ export class AppComponent {
       console.log('constructor', this.userServ, this.userServ.getData());
       this.name = this.userServ.getData().name;
     }, 3000);
+
+    this.userServ.getHttpData().subscribe(output=>{
+      console.warn(output)
+    })
   }
 }
