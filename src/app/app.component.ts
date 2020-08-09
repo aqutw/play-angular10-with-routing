@@ -9,6 +9,7 @@ import { UsersService } from './users.service';
 export class AppComponent {
   title = 'play-angular10-routing';
   name = '--unknow--';
+  data = [];
   constructor(private userServ:UsersService){
     setTimeout(() => {
       console.log('constructor', this.userServ, this.userServ.getData());
@@ -16,7 +17,8 @@ export class AppComponent {
     }, 3000);
 
     this.userServ.getHttpData().subscribe(output=>{
-      console.warn(output)
+      console.warn(output);
+      this.data = output;
     })
   }
 }
